@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     # end
   end
 
+  get 'auth/:provider/callback', to: 'sessions#oauth'
+
   resources :users, only: [:new, :create],
     path_names: { new: 'signup' }
 
